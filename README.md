@@ -23,4 +23,4 @@ Case 4 - From, To, Day, Distance, Holiday or not,  sporting events, advertising 
                  Stastistical model was used.
                  
   - Step 5: Using and evaluating a forecasting model.
-  -              The forecasting model were seen as a threat.
+                 The forecasting model were seen as a threat.
