@@ -5,8 +5,8 @@ Assessment for Econometrics
 
 #### 1. For cases 3 and 4 in Section 1.5, list the possible predictor variables that might be useful, assuming that the relevant data are available.
 
-Case 3 - Name of Car, Model, Company, Kilometers travelled, Mileage, Fuel, Automatic or Not, Price of buy, etc.
-Case 4 - From, To, Day, Distance, Holiday or not,  sporting events, advertising campaigns, competition behaviour, Previous years' passenger count, etc.
+-         Case 3 - Name of Car, Model, Company, Kilometers travelled, Mileage, Fuel, Automatic or Not, Price of buy, etc.
+-         Case 4 - From, To, Day, Distance, Holiday or not,  sporting events, advertising campaigns, competition behaviour, Previous years' passenger count, etc.
 
 #### 2. For case 3 in Section 1.5, describe the five steps of forecasting in the context of this project.
 
