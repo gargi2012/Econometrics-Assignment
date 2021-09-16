@@ -1,2 +1,27 @@
 # Econometrics-Assignment
 Assessment for Econometrics
+
+
+Case 3
+A large car fleet company asked us to help them forecast vehicle resale values. They purchase new vehicles, lease them out for three years, and then sell them. Better forecasts of vehicle sales values would mean better control of profits; understanding what affects resale values may allow leasing and sales policies to be developed in order to maximise profits.
+
+At the time, the resale values were being forecast by a group of specialists. Unfortunately, they saw any statistical model as a threat to their jobs, and were uncooperative in providing information. Nevertheless, the company provided a large amount of data on previous vehicles and their eventual resale values.
+
+
+
+#### 1. For cases 3 and 4 in Section 1.5, list the possible predictor variables that might be useful, assuming that the relevant data are available.
+
+Case 3 - Name of Car, Model, Company, Kilometers travelled, Mileage, Fuel, Automatic or Not, Price of buy, etc.
+Case 4 - From, To, Day, Distance, Holiday or not,  sporting events, advertising campaigns, competition behaviour, Previous years' passenger count, etc.
+
+#### 2. For case 3 in Section 1.5, describe the five steps of forecasting in the context of this project.
+
+  Step 1: Problem definition.
+
+  Step 2: Gathering information.
+
+  Step 3: Preliminary (exploratory) analysis.
+
+  Step 4: Choosing and fitting models.
+
+  Step 5: Using and evaluating a forecasting model.
