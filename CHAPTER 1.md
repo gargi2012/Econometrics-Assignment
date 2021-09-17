@@ -15,9 +15,14 @@
                     - Forecasting car resale value.
 
           Step 2: Gathering information.
+                    - Was provided with historical data. 
+                    - There were agroup of specialists, who were not welcoming towards the idea.
 
           Step 3: Preliminary (exploratory) analysis.
+                    - Nothing specified.
 
           Step 4: Choosing and fitting models.
+                    - Statistical model.
 
           Step 5: Using and evaluating a forecasting model.
+                    - The specialists felt threatened about the approach.
