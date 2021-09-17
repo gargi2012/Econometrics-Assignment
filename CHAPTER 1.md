@@ -9,3 +9,15 @@
           campaigns in place 1, Is there any advertising campaigns in place 2, ticket fare, etc.
 
 #### 2. For case 3 in Section 1.5, describe the five steps of forecasting in the context of this project.
+
+#### Ans: 
+          Step 1: Problem definition.
+                    - Forecasting car resale value.
+
+          Step 2: Gathering information.
+
+          Step 3: Preliminary (exploratory) analysis.
+
+          Step 4: Choosing and fitting models.
+
+          Step 5: Using and evaluating a forecasting model.
