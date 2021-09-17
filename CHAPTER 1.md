@@ -16,7 +16,7 @@
 
           Step 2: Gathering information.
                     - Was provided with historical data. 
-                    - There were agroup of specialists, who were not welcoming towards the idea.
+                    - There were a group of specialists, who were not welcoming towards the idea.
 
           Step 3: Preliminary (exploratory) analysis.
                     - Nothing specified.
