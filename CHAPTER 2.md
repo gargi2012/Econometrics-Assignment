@@ -2,23 +2,23 @@
 
 1. Use the help function to explore what the series gafa_stock, PBS, vic_elec and pelt represent.
 
- -  a. Use autoplot() to plot some of the series in these data sets.
- -  b. What is the time interval of each series?
+ -   Use autoplot() to plot some of the series in these data sets.
+ -   What is the time interval of each series?
  
 2. Use filter() to find what days corresponded to the peak closing price for each of the four stocks in gafa_stock.
 
 3. Download the file tute1.csv from the book website, open it in Excel (or some other spreadsheet application), and review its contents. You should find four columns of information. Columns B through D each contain a quarterly series, labelled Sales, AdBudget and GDP. Sales contains the quarterly sales for a small company over the period 1981-2005. AdBudget is the advertising budget and GDP is the gross domestic product. All series have been adjusted for inflation.
 
- - a. You can read the data into R with the following script:
+ - You can read the data into R with the following script:
 
 tute1 <- readr::read_csv("tute1.csv")
 View(tute1)
- - b. Convert the data to time series
+ -  Convert the data to time series
 
 mytimeseries <- tute1 %>%
   mutate(Quarter = yearmonth(Quarter)) %>%
   as_tsibble(index = Quarter)
-- c. Construct time series plots of each of the three series
+-  Construct time series plots of each of the three series
 
 mytimeseries %>%
   pivot_longer(-Quarter) %>%
@@ -29,21 +29,22 @@ Check what happens when you don’t include facet_grid().
 
 4. The USgas package contains data on the demand for natural gas in the US.
 
- - a. Install the USgas package.
- - b.Create a tsibble from us_total with year as the index and state as the key.
- - c.Plot the annual natural gas consumption by state for the New England area (comprising the states of Maine, Vermont, New Hampshire, Massachusetts, Connecticut and Rhode Island).
+ - Install the USgas package.
+ - Create a tsibble from us_total with year as the index and state as the key.
+ - Plot the annual natural gas consumption by state for the New England area (comprising the states of Maine, Vermont, New Hampshire, Massachusetts, Connecticut and Rhode Island).
 5. 
- - a. Download tourism.xlsx from the book website and read it into R using readxl::read_excel().
- - b. Create a tsibble which is identical to the tourism tsibble from the tsibble package.
- - c.Find what combination of Region and Purpose had the maximum number of overnight trips on average.
- - d.Create a new tsibble which combines the Purposes and Regions, and just has total trips by State.
+ - Download tourism.xlsx from the book website and read it into R using readxl::read_excel().
+ - Create a tsibble which is identical to the tourism tsibble from the tsibble package.
+ - Find what combination of Region and Purpose had the maximum number of overnight trips on average.
+ - Create a new tsibble which combines the Purposes and Regions, and just has total trips by State.
 6. Create time plots of the following four time series: Bricks from aus_production, Lynx from pelt, Close from gafa_stock, Demand from vic_elec.
 
 - Use ? (or help()) to find out about the data in each series.
 - For the last plot, modify the axis labels and title.
-The aus_arrivals data set comprises quarterly international arrivals to Australia from Japan, New Zealand, UK and the US.
 
-Use autoplot(), gg_season() and gg_subseries() to compare the differences between the arrivals from these four countries.
+7. The aus_arrivals data set comprises quarterly international arrivals to Australia from Japan, New Zealand, UK and the US.
+
+- Use autoplot(), gg_season() and gg_subseries() to compare the differences between the arrivals from these four countries.
 Can you identify any unusual observations?
 Monthly Australian retail data is provided in aus_retail. Select one of the time series as follows (but choose your own seed value):
 
