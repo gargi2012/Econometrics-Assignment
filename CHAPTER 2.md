@@ -29,10 +29,10 @@ Check what happens when you don’t include facet_grid().
 
 4. The USgas package contains data on the demand for natural gas in the US.
 
-Install the USgas package.
-Create a tsibble from us_total with year as the index and state as the key.
-Plot the annual natural gas consumption by state for the New England area (comprising the states of Maine, Vermont, New Hampshire, Massachusetts, Connecticut and Rhode Island).
-Download tourism.xlsx from the book website and read it into R using readxl::read_excel().
+ - a. Install the USgas package.
+ - b.Create a tsibble from us_total with year as the index and state as the key.
+ - c.Plot the annual natural gas consumption by state for the New England area (comprising the states of Maine, Vermont, New Hampshire, Massachusetts, Connecticut and Rhode Island).
+5. - a.Download tourism.xlsx from the book website and read it into R using readxl::read_excel().
 Create a tsibble which is identical to the tourism tsibble from the tsibble package.
 Find what combination of Region and Purpose had the maximum number of overnight trips on average.
 Create a new tsibble which combines the Purposes and Regions, and just has total trips by State.
