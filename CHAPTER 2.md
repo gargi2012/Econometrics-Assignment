@@ -1,7 +1,10 @@
+## Exercise Questions
+
 1. Use the help function to explore what the series gafa_stock, PBS, vic_elec and pelt represent.
 
   a. Use autoplot() to plot some of the series in these data sets.
   b. What is the time interval of each series?
+ 
 2. Use filter() to find what days corresponded to the peak closing price for each of the four stocks in gafa_stock.
 
 3. Download the file tute1.csv from the book website, open it in Excel (or some other spreadsheet application), and review its contents. You should find four columns of information. Columns B through D each contain a quarterly series, labelled Sales, AdBudget and GDP. Sales contains the quarterly sales for a small company over the period 1981-2005. AdBudget is the advertising budget and GDP is the gross domestic product. All series have been adjusted for inflation.
