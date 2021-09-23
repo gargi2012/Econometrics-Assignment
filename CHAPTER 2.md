@@ -45,41 +45,43 @@ Check what happens when you don’t include facet_grid().
 7. The aus_arrivals data set comprises quarterly international arrivals to Australia from Japan, New Zealand, UK and the US.
 
 - Use autoplot(), gg_season() and gg_subseries() to compare the differences between the arrivals from these four countries.
-Can you identify any unusual observations?
-Monthly Australian retail data is provided in aus_retail. Select one of the time series as follows (but choose your own seed value):
+- Can you identify any unusual observations?
+8. Monthly Australian retail data is provided in aus_retail. Select one of the time series as follows (but choose your own seed value):
 
 set.seed(12345678)
 myseries <- aus_retail %>%
   filter(`Series ID` == sample(aus_retail$`Series ID`,1))
-Explore your chosen retail time series using the following functions:
+- Explore your chosen retail time series using the following functions:
 
 autoplot(), gg_season(), gg_subseries(), gg_lag(),
 
 ACF() %>% autoplot()
 
-Can you spot any seasonality, cyclicity and trend? What do you learn about the series?
+- Can you spot any seasonality, cyclicity and trend? What do you learn about the series?
 
-Use the following graphics functions: autoplot(), gg_season(), gg_subseries(), gg_lag(), ACF() and explore features from the following time series: “Total Private” Employed from us_employment, Bricks from aus_production, Hare from pelt, “H02” Cost from PBS, and us_gasoline.
+9. Use the following graphics functions: autoplot(), gg_season(), gg_subseries(), gg_lag(), ACF() and explore features from the following time series: “Total Private” Employed from us_employment, Bricks from aus_production, Hare from pelt, “H02” Cost from PBS, and us_gasoline.
 
-Can you spot any seasonality, cyclicity and trend?
-What do you learn about the series?
-What can you say about the seasonal patterns?
-Can you identify any unusual years?
-The following time plots and ACF plots correspond to four different time series. Your task is to match each time plot in the first row with one of the ACF plots in the second row.
+- Can you spot any seasonality, cyclicity and trend?
+- What do you learn about the series?
+- What can you say about the seasonal patterns?
+- Can you identify any unusual years?
+
+10. The following time plots and ACF plots correspond to four different time series. Your task is to match each time plot in the first row with one of the ACF plots in the second row.
 
 
 
-The aus_livestock data contains the monthly total number of pigs slaughtered in Victoria, Australia, from Jul 1972 to Dec 2018. Use filter() to extract pig slaughters in Victoria between 1990 and 1995. Use autoplot() and ACF() for this data. How do they differ from white noise? If a longer period of data is used, what difference does it make to the ACF?
+11. The aus_livestock data contains the monthly total number of pigs slaughtered in Victoria, Australia, from Jul 1972 to Dec 2018. Use filter() to extract pig slaughters in Victoria between 1990 and 1995. Use autoplot() and ACF() for this data. How do they differ from white noise? If a longer period of data is used, what difference does it make to the ACF?
 
-Use the following code to compute the daily changes in Google closing stock prices.
+12.
+- Use the following code to compute the daily changes in Google closing stock prices.
 
 dgoog <- gafa_stock %>%
   filter(Symbol == "GOOG", year(Date) >= 2018) %>%
   mutate(trading_day = row_number()) %>%
   update_tsibble(index = trading_day, regular = TRUE) %>%
   mutate(diff = difference(Close))
-Why was it necessary to re-index the tsibble?
+- Why was it necessary to re-index the tsibble?
 
-Plot these differences and their ACF.
+- Plot these differences and their ACF.
 
-Do the changes in the stock prices look like white noise?
+- Do the changes in the stock prices look like white noise?
