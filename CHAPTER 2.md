@@ -9,16 +9,16 @@
 
 3. Download the file tute1.csv from the book website, open it in Excel (or some other spreadsheet application), and review its contents. You should find four columns of information. Columns B through D each contain a quarterly series, labelled Sales, AdBudget and GDP. Sales contains the quarterly sales for a small company over the period 1981-2005. AdBudget is the advertising budget and GDP is the gross domestic product. All series have been adjusted for inflation.
 
-You can read the data into R with the following script:
+  a. You can read the data into R with the following script:
 
 tute1 <- readr::read_csv("tute1.csv")
 View(tute1)
-Convert the data to time series
+  b. Convert the data to time series
 
 mytimeseries <- tute1 %>%
   mutate(Quarter = yearmonth(Quarter)) %>%
   as_tsibble(index = Quarter)
-Construct time series plots of each of the three series
+c. Construct time series plots of each of the three series
 
 mytimeseries %>%
   pivot_longer(-Quarter) %>%
@@ -27,7 +27,7 @@ mytimeseries %>%
   facet_grid(name ~ ., scales = "free_y")
 Check what happens when you don’t include facet_grid().
 
-The USgas package contains data on the demand for natural gas in the US.
+4. The USgas package contains data on the demand for natural gas in the US.
 
 Install the USgas package.
 Create a tsibble from us_total with year as the index and state as the key.
