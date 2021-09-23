@@ -32,14 +32,15 @@ Check what happens when you don’t include facet_grid().
  - a. Install the USgas package.
  - b.Create a tsibble from us_total with year as the index and state as the key.
  - c.Plot the annual natural gas consumption by state for the New England area (comprising the states of Maine, Vermont, New Hampshire, Massachusetts, Connecticut and Rhode Island).
-5. - a.Download tourism.xlsx from the book website and read it into R using readxl::read_excel().
-Create a tsibble which is identical to the tourism tsibble from the tsibble package.
-Find what combination of Region and Purpose had the maximum number of overnight trips on average.
-Create a new tsibble which combines the Purposes and Regions, and just has total trips by State.
-Create time plots of the following four time series: Bricks from aus_production, Lynx from pelt, Close from gafa_stock, Demand from vic_elec.
+5. 
+ - a. Download tourism.xlsx from the book website and read it into R using readxl::read_excel().
+ - b. Create a tsibble which is identical to the tourism tsibble from the tsibble package.
+ - c.Find what combination of Region and Purpose had the maximum number of overnight trips on average.
+ - d.Create a new tsibble which combines the Purposes and Regions, and just has total trips by State.
+6. Create time plots of the following four time series: Bricks from aus_production, Lynx from pelt, Close from gafa_stock, Demand from vic_elec.
 
-Use ? (or help()) to find out about the data in each series.
-For the last plot, modify the axis labels and title.
+- Use ? (or help()) to find out about the data in each series.
+- For the last plot, modify the axis labels and title.
 The aus_arrivals data set comprises quarterly international arrivals to Australia from Japan, New Zealand, UK and the US.
 
 Use autoplot(), gg_season() and gg_subseries() to compare the differences between the arrivals from these four countries.
