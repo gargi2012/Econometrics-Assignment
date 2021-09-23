@@ -2,8 +2,8 @@
 
 1. Use the help function to explore what the series gafa_stock, PBS, vic_elec and pelt represent.
 
-  a. Use autoplot() to plot some of the series in these data sets.
-  b. What is the time interval of each series?
+ -  a. Use autoplot() to plot some of the series in these data sets.
+ -  b. What is the time interval of each series?
  
 2. Use filter() to find what days corresponded to the peak closing price for each of the four stocks in gafa_stock.
 
