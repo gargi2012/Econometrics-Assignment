@@ -1,0 +1,269 @@
+---
+title: 'Chapter 2 : Econometrics'
+author: "20bda55"
+date: "25/09/2021"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(dplyr)
+library(fpp3)
+```
+
+## 1. Answer: 
+```{r}
+# help(gafa_stock)
+# help(PBS)
+# help(vic_elec)
+# help(pelt)
+```
+
+a.
+```{r}
+
+# Autoplots for gafa_stock
+# Autoplot1
+autoplot(gafa_stock, Open) +
+  labs(title = "Open Price for stock",
+       subtitle = "gafa_stock",
+       y = "Price($USD)")
+
+# Autoplot2
+autoplot(gafa_stock, High) +
+  labs(title = "Highest trading Price for stock",
+       subtitle = "gafa_stock",
+       y = "Price($USD)")
+
+# Autoplot3
+autoplot(gafa_stock, Low) +
+  labs(title = "lowest trading Price for stock",
+       subtitle = "gafa_stock",
+       y = "Price($USD)")
+
+```
+
+```{r}
+# Autoplots for PBS
+# Autoplot1
+autoplot(PBS, Scripts) +
+  labs(title = "number of scripts (monthly)",
+       subtitle = "PBS",
+       y = "scripts")
+
+# Autoplot2
+autoplot(PBS, Cost) +
+  labs(title = "monthly Cost",
+       subtitle = "PBS",
+       y = "cost")
+
+
+
+```
+
+```{r}
+
+# Autoplots for vic_elec
+# Autoplot1
+autoplot(vic_elec, Demand) +
+  labs(title = "half hourly electricity demand",
+       subtitle = "vic_elec",
+       y = "demand")
+
+# Autoplot2
+autoplot(vic_elec, Temperature) +
+  labs(title = "half hourly temperature",
+       subtitle = "vic_elec",
+       y = "temperature")
+
+```
+
+```{r}
+# Autoplots for pelt
+autoplot(pelt, Hare) +
+  labs(title = "number of Snowshoe Hare pelts traded in the year",
+       subtitle = "pelt",
+       y = "hare")
+
+# Autoplot2
+autoplot(pelt, Hare) +
+  labs(title = "number of Snowshoe Hare pelts traded in the year",
+       subtitle = "pelt",
+       y = "hare")
+```
+
+b. 
+time interval:
+gafa_stock : daily
+PBS: Monthly
+vic_elec: 30 minutes
+pelt: 1 year
+
+
+
+
+## 2. Answer
+```{r}
+gs_aapl <- gafa_stock %>%
+  filter(Symbol=="AAPL")
+
+autoplot(gs_aapl, Close) +
+  labs(title = "Closing Price for stock",
+       subtitle = "apple",
+       y = "Closing Price($USD)")
+
+
+gs_goog <- gafa_stock %>%
+  filter(Symbol=="GOOG")
+
+autoplot(gs_goog, Close) +
+  labs(title = "Closing Price for stock",
+       subtitle = "google",
+       y = "Closing Price($USD)")
+
+gs_amzn <- gafa_stock %>%
+  filter(Symbol=='AMZN')
+
+autoplot(gs_amzn, Close) +
+  labs(title = "Closing Price for stock",
+       subtitle = "aamazon",
+       y = "Closing Price($USD)")
+
+gs_fb <- gafa_stock %>%
+  filter(Symbol=="FB")
+
+autoplot(gs_fb, Close) +
+  labs(title = "Closing Price for stock",
+       subtitle = "facebook",
+       y = "Closing Price($USD)")
+```
+## 3. Answer
+
+```{r}
+tute1 <- readr::read_csv("C:/Users/User/Downloads/tute1.csv")
+View(tute1)
+```
+
+
+```{r}
+mytimeseries <- tute1 %>%
+  mutate(Quarter = yearmonth(Quarter)) %>%
+  as_tsibble(index = Quarter)
+```
+
+
+```{r}
+mytimeseries %>%
+  pivot_longer(-Quarter) %>%
+  ggplot(aes(x = Quarter, y = value, colour = name)) +
+  geom_line() +
+  facet_grid(name ~ ., scales = "free_y")
+```
+
+
+```{r}
+mytimeseries %>%
+  pivot_longer(-Quarter) %>%
+  ggplot(aes(x = Quarter, y = value, colour = name)) +
+  geom_line()
+```
+## 4. Answer
+
+```{r}
+#install.packages('USgas')
+library(USgas)
+```
+
+
+```{r}
+us_total_ts <- us_total %>%
+  as_tsibble(key = state,
+             index = year)
+```
+
+```{r}
+us_total_ts
+```
+
+
+```{r}
+us_total_england <- us_total_ts %>%
+  filter(state == c('Maine', 'Vermont',
+                    'New Hampshire', 'Massachusetts',
+                    'Connecticut', 'Rhode Island'))
+
+
+autoplot(us_total_england,y) +
+  labs(title = "annual natural gas consumption",
+       subtitle = "new england area",
+       y = "annual consumption")
+```
+
+## 5. Answer
+```{r}
+tourism1 <- readxl::read_excel("C:/Users/User/Downloads/tourism.xlsx")
+View(tourism1)
+```
+
+```{r}
+library(tsibble)
+```
+
+
+```{r}
+tourism
+```
+
+```{r}
+tourism_ts <- tourism1 %>%
+  mutate(Quarter = yearquarter(Quarter)) %>%
+  as_tsibble(key=c(Region, State, Purpose, Trips),
+             index = Quarter)
+```
+
+```{r}
+tourism_ts
+```
+
+
+
+
+
+```{r}
+```
+
+
+```{r}
+```
+
+
+```{r}
+```
+
+
+```{r}
+```
+
+
+```{r}
+```
+
+## 12. Answer
+```{r}
+dgoog <- gafa_stock %>%
+  filter(Symbol == "GOOG", year(Date) >= 2018) %>%
+  mutate(trading_day = row_number()) %>%
+  update_tsibble(index = trading_day, regular = TRUE) %>%
+  mutate(diff = difference(Close))
+```
+
+
+```{r}
+dgoog
+```
+
